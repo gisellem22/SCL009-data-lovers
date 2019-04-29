@@ -7,10 +7,19 @@
 //   return 'example';
 // };
 
-window.pokemonIChooseU = {
-  pokemonFilterByName: (name, allPokemon) => {
-    return allPokemon.filter(element => element.name===name);
-  
-  },
+window.pokemonFilter = {
 
+pokemonFilterByNameOrNum = (data,condition) => {
+
+    for (let i = 0; i < allPokemon.length; i++){
+  if (allPokemon[i].condition === data || allPokemon[i].condition === parseInt(data)){
+      result.push(allPokemon[i]);
+  }}}
+,
+pokemonFilterByType = (data,condition) => {
+for (let i = 0; i < allPokemon.length; i++){
+for (let j = 0; j < 2; j++){
+if (allPokemon[i].condition[j] === data){
+    result.push(allPokemon[i]);
+}}}}
 };
