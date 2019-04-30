@@ -2,3 +2,15 @@ nav {
 
     background-color: #FF0000;
 }
+
+.card {
+    background-image: url(https://cdn-images-1.medium.com/max/1200/1*ZhuqSg8Jmz4p8H6X5U1uzQ.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding:40px 20px;
+
+}
+.card img {
+    
+    max-width: 130px;
+}

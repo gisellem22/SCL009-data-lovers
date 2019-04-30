@@ -1,64 +1,52 @@
 //Declaración de Variables
-const allPokemon = POKEMON.pokemon;
+const allPokemon = window.POKEMON.pokemon;
 let containerBtnSearch = document.getElementById("btn_search");
 let containerResult = document.getElementById("result");
 let search;
-let containerAZ = document.getElementById("a_z");
-let containerZA = document.getElementById("z_a");
-let container1to151 = document.getElementById("number1to151");
-let container151to1 = document.getElementById("number151to1");
-let dataSearched;
-let result;
+// let containerAZ = document.getElementById("a_z");
+// let containerZA = document.getElementById("z_a");
+// let container1to151 = document.getElementById("number1to151");
+// let container151to1 = document.getElementById("number151to1");
+let containerSelect = document.getElementById("select_type");
+let cardHTML;
 
-//Función Filtrar Por Nombre
-const pokemonFilterByName = (name) => {
-
-    for (let i = 0; i < allPokemon.length; i++){
-  if (allPokemon[i].name === name){
-      result.push(allPokemon[i]);
-      // return result;
-  }}};
-
-//Función Filtrar Por Numero
-const pokemonFilterByNumber = (num) => {
-  // let result = [];
-  for (let i = 0; i < allPokemon.length; i++){
-    if (allPokemon[i].id === parseInt(num)){
-       result.push(allPokemon[i]);
-      //  return result;
-    }}};
-
-//Función Filtrar Por Tipo
-const pokemonFilterByType = (type) => {
-  // let result = [];
-  for (let i = 0; i < allPokemon.length; i++){
-for (let j = 0; j < 2; j++){
-if (allPokemon[i].type[j] ===type){
-    result.push(allPokemon[i]);
-}
-  }
- }
-//  return result;
-};
-
-  //Función Crear Elementos html
-let createElement = (data) => {  
-  for (let b= 0; b < data.length; b++){
-    let newDiv = document.createElement("IMG");
-    newDiv.setAttribute("src",data[b].img);
-    document.getElementById("result").appendChild(newDiv);
-  }
+//Función Crear Elementos html
+const showElements = (data) => {
+  data.forEach(element => {
+     cardHTML += `
+     <div class="card mb-3" style="max-width: 540px;">
+       <div class="row no-gutters">
+         <div class="col-md-4">
+           <img src="${element.img}"class="card-img" alt="Card image cap">
+         </div>
+             <div class="col-md-8">
+               <div class="card-body">
+                 <h5 class="card-title">${element.name}</h5>
+                 <p class="card-text">#${element.num}</p>
+                 <p class="card-text">tipo: ${element.type}</p>
+                 </div>
+             </div>
+         </div>
+     </div>`
+  })
+ containerResult.innerHTML = cardHTML;
 };
 //Botón Search Por Nombre
 containerBtnSearch.addEventListener("click", () => {
-  containerResult.value = "";
-  result =[];
+    cardHTML = "";
     search = document.getElementById("search").value;
-       pokemonFilterByName(search);
-       pokemonFilterByNumber(search);
-        pokemonFilterByType(search);
-       createElement(result);
+    showElements(window.pokemonFilter.byName(allPokemon, search));
+    showElements(window.pokemonFilter.byNumber(allPokemon, search));
+    showElements(window.pokemonFilter.byType(allPokemon, search));
 });
+//Select de tipos
+containerSelect.addEventListener("change", () => {
+  cardHTML = "";
+  search = containerSelect.option;
+  [containerSelect.selectedIndex].text;
+  showElements(window.pokemonFilter.byType(allPokemon, search));
+}); 
+
 // //Botón Ordenar por Nombre de A a Z
 // containerAZ.addEventListener("click", () => {
 //   let orderedAZ = az();
@@ -112,21 +100,11 @@ containerBtnSearch.addEventListener("click", () => {
 //   return 0; 
 //  })};
  
-//  //Función Crear Elementos html
-// const createCard = (data) => {  
-//   let cardHTML ="";
-//   data.forEach(element => {
-//     cardHTML += 
-//     <div class="card mb-3" style="max-width: 540px;">
-//     <div class="row no-gutters">
-      
-//       <div class="col-md-8">
-//         <div class="card-body">
-//           <h5 class="card-title">${element.name}</h5>
-//           <p class="card-text">${element.num}</p>
-//           <p class="card-text">${element.type}</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// })}
+//    //Función Crear Elementos html
+// let createElement = (data) => {  
+//   for (let b= 0; b < data.length; b++){
+//     let newDiv = document.createElement("IMG");
+//     newDiv.setAttribute("src",data[b].img);
+//     document.getElementById("result").appendChild(newDiv);
+//   }
+// };

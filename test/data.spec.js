@@ -4,13 +4,16 @@ require('../src/data');
 require('./data.spec.js');
 
 
-describe('example', () => {
+describe('pokemonFilter', () => {
   
-  it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
+  it('debería ser un objeto', () => {
+    assert.equal(typeof pokemonFilter, 'object');
   });
 
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
+  describe('pokemonFilter'.byName, () => {
+  
+    it('debería ser una función', () => {
+      assert.equal(typeof pokemonFilter.byName, 'function');
+    });
   });
-})
+ });
