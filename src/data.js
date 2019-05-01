@@ -6,6 +6,7 @@ window.pokemonFilter = {
         result.push(data[i]);
       } 
     } return result;
+    
   } 
   ,
   byNumber: (data,condition) => {

@@ -13,21 +13,15 @@ let cardHTML;
 //Función Crear Elementos html
 const showElements = (data) => {
   data.forEach(element => {
-     cardHTML += `
-     <div class="card mb-3" style="max-width: 540px;">
-       <div class="row no-gutters">
-         <div class="col-md-4">
-           <img src="${element.img}"class="card-img" alt="Card image cap">
-         </div>
-             <div class="col-md-8">
-               <div class="card-body">
-                 <h5 class="card-title">${element.name}</h5>
-                 <p class="card-text">#${element.num}</p>
-                 <p class="card-text">tipo: ${element.type}</p>
-                 </div>
-             </div>
-         </div>
-     </div>`
+    cardHTML +=
+     `<div class="card" style="width: 200px;">
+  <img class="card-img-top" src=${element.img} alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${element.name}</h5>
+    <p class="card-text">#${element.num}.</p>
+    <p class="card-text">Tipo: ${element.type}.</p>
+  </div>
+</div>`
   })
  containerResult.innerHTML = cardHTML;
 };
@@ -42,8 +36,7 @@ containerBtnSearch.addEventListener("click", () => {
 //Select de tipos
 containerSelect.addEventListener("change", () => {
   cardHTML = "";
-  search = containerSelect.option;
-  [containerSelect.selectedIndex].text;
+  search = containerSelect.value;
   showElements(window.pokemonFilter.byType(allPokemon, search));
 }); 
 
@@ -108,3 +101,4 @@ containerSelect.addEventListener("change", () => {
 //     document.getElementById("result").appendChild(newDiv);
 //   }
 // };
+window.allPokemon = allPokemon;
