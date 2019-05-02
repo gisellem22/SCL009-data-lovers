@@ -1,4 +1,34 @@
-nav {
-
-    background-color: #FF0000;
-}
+.header{
+    width: 1200px;
+    height: 300px;
+    align-content: center;
+    margin: 0 auto;
+    background-image: url(https://i.ibb.co/cQD9MJ6/pika.jpg);
+  }
+  
+  body{
+  
+    height: 600px;
+    background-color: aquamarine;
+  }
+  .navbar-dark{
+    background-color: orangered;
+    width: 1200px;
+    margin: 0 auto;
+  
+  }
+  .btn{
+  background-color: gold;
+    color: black;
+    border: 0;
+  }
+  .btn-group{
+    background-color: gold;
+    width: 100px;
+    margin: 0 auto;
+  }
+  
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }

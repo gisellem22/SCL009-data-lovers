@@ -7,4 +7,9 @@ const example = () => {
   return 'example';
 };
 
-window.example = example;
+window.pokemonIChooseU = {
+  pokemonFilterByName: (name, allPokemon) => {
+    return allPokemon.filter(element => element.name===name);
+  },
+
+};
