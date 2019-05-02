@@ -39,3 +39,6 @@ nav {
   border-width:2px;  
   border-style:solid;
 }
+.sr-only {
+    color: black;
+}
