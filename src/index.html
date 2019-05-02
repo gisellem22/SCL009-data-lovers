@@ -6,53 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Data Lovers</title>
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"/>
-    </head>
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
   <body>
-    <nav class="navbar navbar" style="background-color: #FF0000;">
-        <form class="form-inline">
-            <input type="text" class="form-control mr-sm-2" id="search" placeholder="search" aria-label="Search">
-            <input type="button" class="btn btn-primary" value="Search" id="btn_search">
-        </form>
-    </nav>
-    <div>
-      <input type="button" class="btn btn-primary" value="A-Z" id="a_z"><br><br>
-      <input type="button" class="btn btn-primary" value="Z-A" id="z_a"><br><br>
-      <input type="button" class="btn btn-primary" value="1-151" id="number1to151"><br><br>
-      <input type="button" class="btn btn-primary" value="151-1" id="number151to1"><br><br>
-      <select class="btn btn-primary"  id="select_type">
-        <option value="all">Tipos de Pokémon</option>
-        <option value="Water">Agua</option>
-        <option value="Bug">Bicho</option>
-        <option value="Dragon">Dragón</option>
-        <option value="Electric">Eléctrico</option>
-        <option value="Ghost">Fantasma</option>
-        <option value="Fire">Fuego</option>
-        <option value="Ice">Hielo</option>
-        <option value="Fighting">Lucha</option>
-        <option value="Normal">Normal</option>
-        <option value="Grass">Planta</option>
-        <option value="Psychic">Psíquico</option>
-        <option value="Rock">Roca</option>
-        <option value="Ground">Tierra</option>
-        <option value="Poison">Veneno</option>
-        <option value="Flying">Volador</option>
+        <header class="header">
+        <div class="container">
+          </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
+            <div class="container">
+                <div class= "btn-group">
+                  <button class= "btn btn default dropdown-toggle" data-toggle="dropdown">NOMBRE</button>
+                  <span class="caret"></span>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" id="az">A - Z</a></li>
+                  <li><a href="#" id="za">Z - A</a></li>
+                </ul> 
+              </div>
+                <div class= "btn-group">
+                  <button class="btn btn default dropdown-toggle" data-toggle="dropdown">NUMERO</button>
+                  <span class="caret"></span>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" id="number1to151">0 - 151</a></li>
+                  <li><a href="#" id="number151to0">151 - 0</a></li>
+                </ul>
+                </div>
+                <div class= "btn-group">
+                    <button id="select_type" class="btn btn default dropdown-toggle" data-toggle="dropdown">TIPO</button>
+                    <span class="caret"></span>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Agua</a></li>
+                    <li><a href="#">Bicho</a></li>
+                    <li><a href="#">Dragón</a></li>
+                    <li><a href="#">Eléctrico</a></li>
+                    <li><a href="#">Fantasma</a></li>
+                    <li><a href="#">Fuego</a></li>
+                    <li><a href="#">Hielo</a></li>
+                    <li><a href="#">Lucha</a></li>
+                    <li><a href="#">Normal</a></li>
+                    <li><a href="#">Planta</a></li>
+                    <li><a href="#">Psiquico</a></li>
+                    <li><a href="#">Roca</a></li>
+                    <li><a href="#">Tierra</a></li>
+                    <li><a href="#">Veneno</a></li>
+                    <li><a href="#">Volador</a></li>
+                  </ul>
+                  </div>
+          <form class="form-inline">
+            <div class="search-container">
+            <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button id="btn_search" class="btn btn-outline-success my-2 my-sm-0" type="button">BUSCAR</button>
+            </div>
+            </form>
+          </div>
+        </nav>
         
-      </select>
-    </div>
-          <div id="result" class="row" ></div>
+           <div id="result" class="row"></div>
+          
+      
     
-       <!-- etiquetas de bootstrap --> 
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-       <!-- etiqueta carpeta data pokemon --> 
-<script src="./data/pokemon/pokemon.js"></script>
-       <!-- etiqueta data JS --> 
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
-           <!-- etiqueta JS DOM--> 
     <script src="main.js"></script>
-   
   </body>
 </html>
