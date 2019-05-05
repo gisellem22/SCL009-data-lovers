@@ -1,34 +1,71 @@
 .header{
-    width: 1200px;
-    height: 300px;
-    align-content: center;
-    margin: 0 auto;
-    background-image: url(https://i.ibb.co/cQD9MJ6/pika.jpg);
-  }
-  
-  body{
-  
-    height: 600px;
-    background-color: aquamarine;
-  }
-  .navbar-dark{
-    background-color: orangered;
-    width: 1200px;
-    margin: 0 auto;
-  
-  }
-  .btn{
+  width: 1200px;
+  height: 300px;
+  align-content: center;
+  margin: 0 auto;
+  background-image: url(https://i.ibb.co/cQD9MJ6/pika.jpg);
+}
+
+body{
+
+  height: 600px;
+  background-color: aquamarine;
+}
+.navbar-dark{
+  background-color: orangered;
+  width: 1200px;
+  margin: 0 auto;
+
+}
+.btn{
+background-color: gold;
+  color: black;
+  border: 0;
+}
+.btn-group{
   background-color: gold;
-    color: black;
-    border: 0;
-  }
-  .btn-group{
-    background-color: gold;
-    width: 100px;
-    margin: 0 auto;
-  }
+  width: 100px;
+  margin: 0 auto;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  color: white;
+  width: 200px;
+  height: 260px;
+  margin: 10px;
+  text-align: center;
+  background-image: url(https://i.pinimg.com/originals/dc/92/80/dc9280d6d991e4dfdaff0b16bf4764f8.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+.card img {
   
-  .container{
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 130px;
+  height: 130px;
+  align-self: center;
+  margin: 1em;
+}
+.card-body{
+  width: 200px;
+  height: 140px; 
+  padding: 0px;
+}
+
+.row {
+  margin-left: 65px;
+}
+.card:hover,
+.card:focus {
+box-shadow: 0 0.9em 0.9em -0.4em rgb(22, 255, 22);
+transform: translateY(-0.70em);
+border-width:2px;  
+border-style:solid;
+}
