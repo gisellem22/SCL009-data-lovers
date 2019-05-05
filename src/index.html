@@ -6,24 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Data Lovers</title>
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="style.css">
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav class="navbar navbar" style="background-color: #FF0000;">
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-    </div>
+        <header class="header" class="img-fluid">
+        <div class="container flex-center">
+          </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
+            <div class="container">
+              <div class="btn">NOMBRE <input type="button" value="A-Z" class= "btn btn default dropdown-toggle">
+              </div>
+                <div class= "btn-group">
+                  <button class= "btn btn default dropdown-toggle" data-toggle="dropdown">NOMBRE</button>
+                  <span class="caret"></span>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" id="az">A - Z</a></li>
+                  <li><a href="#" id="za">Z - A</a></li>
+                </ul> 
+              </div>
+                <div class= "btn-group">
+                  <button class="btn btn default dropdown-toggle" data-toggle="dropdown">NUMERO</button>
+                  <span class="caret"></span>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#" id="number1to151">0 - 151</a></li>
+                  <li><a href="#" id="number151to0">151 - 0</a></li>
+                </ul>
+                </div>
+                <select class="btn btn-primary"  id="select_type">
+                  <option value="all">Tipos de Pokémon</option>
+                  <option value="Water">Agua</option>
+                  <option value="Bug">Bicho</option>
+                  <option value="Dragon">Dragón</option>
+                  <option value="Electric">Eléctrico</option>
+                  <option value="Ghost">Fantasma</option>
+                  <option value="Fire">Fuego</option>
+                  <option value="Ice">Hielo</option>
+                  <option value="Fighting">Lucha</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Grass">Planta</option>
+                  <option value="Psychic">Psíquico</option>
+                  <option value="Rock">Roca</option>
+                  <option value="Ground">Tierra</option>
+                  <option value="Poison">Veneno</option>
+                  <option value="Flying">Volador</option>
+                </select>
+          <form class="form-inline">
+            <div class="search-container">
+            <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button id="btn_search" class="btn btn-outline-success my-2 my-sm-0" type="button">BUSCAR</button>
+            </div>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </header>
+<div id="result" class="row flex-center"></div>
+      
     
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
-   
   </body>
 </html>
