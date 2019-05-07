@@ -16,47 +16,38 @@
         </header>
         <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
             <div class="container">
-                <div class= "btn-group">
-                  <button class= "btn btn default dropdown-toggle" data-toggle="dropdown">NOMBRE</button>
-                  <span class="caret"></span>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#" id="az">A - Z</a></li>
-                  <li><a href="#" id="za">Z - A</a></li>
-                </ul> 
-              </div>
-                <div class= "btn-group">
-                  <button class="btn btn default dropdown-toggle" data-toggle="dropdown">NUMERO</button>
-                  <span class="caret"></span>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#" id="number1to151">0 - 151</a></li>
-                  <li><a href="#" id="number151to0">151 - 0</a></li>
-                </ul>
-                </div>
-                <div class= "btn-group">
-                    <button id="select_type" class="btn btn default dropdown-toggle" data-toggle="dropdown">TIPO</button>
-                    <span class="caret"></span>
-                    <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Agua</a></li>
-                    <li><a href="#">Bicho</a></li>
-                    <li><a href="#">Dragón</a></li>
-                    <li><a href="#">Eléctrico</a></li>
-                    <li><a href="#">Fantasma</a></li>
-                    <li><a href="#">Fuego</a></li>
-                    <li><a href="#">Hielo</a></li>
-                    <li><a href="#">Lucha</a></li>
-                    <li><a href="#">Normal</a></li>
-                    <li><a href="#">Planta</a></li>
-                    <li><a href="#">Psiquico</a></li>
-                    <li><a href="#">Roca</a></li>
-                    <li><a href="#">Tierra</a></li>
-                    <li><a href="#">Veneno</a></li>
-                    <li><a href="#">Volador</a></li>
-                  </ul>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <input type="button" class="btn btn-secondary.name" value="NOMBRE">
+                      <input type="button" id="a_z" class="btn btn-secondary" value="A-Z" >
+                      <input type="button" id="z_a" class="btn btn-secondary" value="Z_A">
                   </div>
+               <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <input type="button" class="btn btn-secondary.name" value="NUMERO">
+                    <input type="button" id="number1to151" class="btn btn-secondary" value="1-151" >
+                    <input type="button" id="number151to1" class="btn btn-secondary" value="151_1">
+                </div>
+                <select class="btn btn-secondary"  id="select_type">
+                  <option value="all">Tipos de Pokémon</option>
+                  <option value="Water">Agua</option>
+                  <option value="Bug">Bicho</option>
+                  <option value="Dragon">Dragón</option>
+                  <option value="Electric">Eléctrico</option>
+                  <option value="Ghost">Fantasma</option>
+                  <option value="Fire">Fuego</option>
+                  <option value="Ice">Hielo</option>
+                  <option value="Fighting">Lucha</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Grass">Planta</option>
+                  <option value="Psychic">Psíquico</option>
+                  <option value="Rock">Roca</option>
+                  <option value="Ground">Tierra</option>
+                  <option value="Poison">Veneno</option>
+                  <option value="Flying">Volador</option>
+                </select>
           <form class="form-inline">
             <div class="search-container">
             <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button id="btn_search" class="btn btn-outline-success my-2 my-sm-0" type="button">BUSCAR</button>
+              <button id="btn_search" class="btn btn-secondary my-2 my-sm-0" type="button">BUSCAR</button>
             </div>
             </form>
           </div>
