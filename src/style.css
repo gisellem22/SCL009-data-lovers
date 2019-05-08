@@ -35,7 +35,7 @@ background-color: gold;
 }
 .btn-secondary:not(:disabled):not(.disabled).active{
 background-color: orange;
-color: wi;
+color: black;
 }
 .btn-secondary:hover,
 .btn-secondary:focus{
@@ -63,7 +63,7 @@ color: wi;
 }
 .card-body{
   width: 200px;
-  height: 140px; 
+  height: 160px; 
   padding: 0px;
 }
 
