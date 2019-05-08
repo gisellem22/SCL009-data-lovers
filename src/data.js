@@ -1,31 +1,23 @@
-window.pokemonFilter = {
+window.pokemonData = {
   byName: (data,condition) => {
-    let result = [];
-    for (let i = 0; i < data.length; i++){
-      if (data[i].name === condition){
-        result.push(data[i]);
-      } 
-    } return result;
-    
+  return data.filter((a) => a.name === condition );
   } 
   ,
   byNumber: (data,condition) => {
-    let result = [];
-    for (let i = 0; i < data.length; i++){
-      if (data[i].id === parseInt(condition)){
-        result.push(data[i]);
-      } 
-    } return result;
+   return data.filter((a) => a.id === parseInt(condition));
   } 
   ,
   byType: (data,condition) => {
-    let result = [];
-    for (let i = 0; i < data.length; i++){
-      for (let j = 0; j < 2; j++){
-        if (data[i].type[j] === condition){
-          result.push(data[i]);
-        }
-      }
-    }return result;
+     return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
   }
+  ,
+  //Función Ordenar de A a Z
+  sortData: (data, sortBy, sortedOrder) => {
+  if (sortedOrder === "increasing"){
+    return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy]));
+      } else if (sortedOrder === "decreasing"){
+    return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy])).reverse();
+      }
+ } 
 };
+
