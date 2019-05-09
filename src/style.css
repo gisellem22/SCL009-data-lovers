@@ -26,13 +26,21 @@ background-color: gold;
   background-color: gold;
   width: 100px;
   margin: 0 auto;
+  margin-right: 200px;
 }
 
 .container{
   margin-left: auto;
   margin-right: auto;
 }
-
+.btn-secondary:not(:disabled):not(.disabled).active{
+background-color: orange;
+color: black;
+}
+.btn-secondary:hover,
+.btn-secondary:focus{
+  background-color: orange;
+}
 .card {
   color: white;
   width: 200px;
@@ -44,7 +52,7 @@ background-color: gold;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
-  margin-right: 40px;
+  margin-right: 36px;
 }
 .card img {
   
@@ -55,7 +63,7 @@ background-color: gold;
 }
 .card-body{
   width: 200px;
-  height: 140px; 
+  height: 160px; 
   padding: 0px;
 }
 
@@ -64,8 +72,14 @@ background-color: gold;
 }
 .card:hover,
 .card:focus {
-box-shadow: 0 0.9em 0.9em -0.4em rgb(22, 255, 22);
+box-shadow: 0 0.9em 0.9em -0.4em rgb(60, 63, 60);
 transform: translateY(-0.70em);
 border-width:2px;  
 border-style:solid;
+}
+.modal-title{
+  margin: 0 auto;
+}
+.modal{
+  text-align: center;
 }

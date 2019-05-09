@@ -1,34 +1,35 @@
-/* Manejo de data */
-
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-//Funcion para Filtrar por Nombre y Numero
+//Función Filtrar Nombre, Numero y Tipo
 window.pokemonData = {
   byName: (data,condition) => {
-    let result = [];
-    for (let i = 0; i < data.length; i++){
-      if (data[i].name === condition){
-        result.push(data[i]);
-        }
-      else if (data[i].id === parseInt(condition)){
-          result.push(data[i]);
-      } 
-
-    } return result;
-    
-  },
-  //Funcion para Filtrar por Tipo
-    byType: (data,condition) => {
-    let result = [];
-    for (let i = 0; i < data.length; i++){
-      for (let j = 0; j < 2; j++){
-        if (data[i].type[j] === condition){
-          result.push(data[i]);
-        }
-      }
-    }return result;
+  return data.filter((a) => a.name === condition );
+  } 
+  ,
+  byNumber: (data,condition) => {
+   return data.filter((a) => a.id === parseInt(condition));
+  } 
+  ,
+  byType: (data,condition) => {
+     return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
   }
+  ,
+  //Función Ordenar de A a Z
+  sortData: (data, sortBy, sortedOrder) => {
+  if (sortedOrder === "increasing"){
+    return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy]));
+      } else if (sortedOrder === "decreasing"){
+    return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy])).reverse();
+      }
+ } 
+ ,
+findPokemon: (data, pokeData) => {
+  const result = data.filter( pokemon => pokemon.id === pokeData);
+  return result;
+}
+,
+//Funcion Calculo
+computeStats: (data, condition) => {
+    let result = data.filter((a)=> a.type[0]===condition || a.type[1]===condition);
+     let answer = Math.round((result.length*100) / 151)+"%";
+     return answer;
+   }
 };
-
-//Funcion para Ordenar de A - Z
