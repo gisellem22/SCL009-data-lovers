@@ -23,8 +23,7 @@ findPokemon: (data, pokeData) => {
 ,
 computeStats: (data, condition) => {
     let result = data.filter((a)=> a.type[0]===condition || a.type[1]===condition);
-     let answer = Math.round((result.length*100) / data.length)+"%";
-     return answer;
+     return Math.round((result.length*100) / data.length)+"%";
    }
 };
 

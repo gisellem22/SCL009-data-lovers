@@ -19,7 +19,7 @@ const showElements = (data) => {
   <div class="card-body">
     <h5 class="card-title">${data[i].name}</h5>
     <p class="card-text">#${data[i].num}.</p>
-    <p class="card-text">Tipo: ${data[i].type}.</p>
+    <p class="card-text">Type: ${data[i].type}.</p>
   </div>
 </div>`
   } containerResult.innerHTML = cardHTML;
@@ -78,7 +78,10 @@ const showModal = (id)=>{
   document.getElementById("modal_title").innerHTML=poke[0].name;
   document.getElementById("poke_img").src = poke[0].img;
   document.getElementById("poke_num").innerHTML="Number: "+ poke[0].num;
-  document.getElementById("poke_type").innerHTML= "Type: " + poke[0].type;
+  document.getElementById("poke_type").innerHTML = "";
+  poke[0].type.forEach(type => {
+  document.getElementById("poke_type").innerHTML += `<img class="type_img" src="./img/types/${type}.png" alt="type"> ${type}` + " ";
+  });
   document.getElementById("poke_height").innerHTML="Height: " + poke[0].height;
   document.getElementById("poke_weight").innerHTML="Weight: " + poke[0].weight;
   document.getElementById("poke_weaknesses").innerHTML= "Weaknesses: " + poke[0].weaknesses;
