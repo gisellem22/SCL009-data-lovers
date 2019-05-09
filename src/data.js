@@ -1,23 +1,18 @@
-//Función Filtrar Nombre, Numero y Tipo
 window.pokemonData = {
-  byName: (data,condition) => {
-  return data.filter((a) => a.name === condition );
+  filterData: (data,condition) => {
+    if (["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"].includes(condition)){
+      return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
+    } else {
+      return data.filter((a) => a.name === condition || a.id === parseInt(condition));
+    }
   } 
-  ,
-  byNumber: (data,condition) => {
-   return data.filter((a) => a.id === parseInt(condition));
-  } 
-  ,
-  byType: (data,condition) => {
-     return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
-  }
   ,
   //Función Ordenar de A a Z
   sortData: (data, sortBy, sortedOrder) => {
   if (sortedOrder === "increasing"){
     return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy]));
       } else if (sortedOrder === "decreasing"){
-    return data.sort((a,b) => a[sortBy].localeCompare(b[sortBy])).reverse();
+    return data.sort((a,b) => b[sortBy].localeCompare(a[sortBy]));
       }
  } 
  ,
@@ -26,10 +21,8 @@ findPokemon: (data, pokeData) => {
   return result;
 }
 ,
-//Funcion Calculo
 computeStats: (data, condition) => {
     let result = data.filter((a)=> a.type[0]===condition || a.type[1]===condition);
-     let answer = Math.round((result.length*100) / 151)+"%";
-     return answer;
+     return Math.round((result.length*100) / data.length)+"%";
    }
 };
