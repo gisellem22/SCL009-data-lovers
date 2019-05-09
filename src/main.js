@@ -44,7 +44,7 @@ containerBtnSearch.addEventListener("click", () => {
 containerSelect.addEventListener("change", () => {
   cardHTML = "";
   search = containerSelect.value;
-  showElements(window.pokemonData.byType(allPokemon, search));
+  showElements(window.pokemonData.filterData(allPokemon, search));
 }); 
 
 //Botón Ordenar por Nombre de A a Z
