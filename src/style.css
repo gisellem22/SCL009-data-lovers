@@ -1,23 +1,28 @@
-.header{
+/*.header{
   width: 1200px;
   height: 300px;
   align-content: center;
   margin: 0 auto;
   background-image: url(https://i.ibb.co/cQD9MJ6/pika.jpg);
-}
+}*/
 
 body{
 
   height: 600px;
   background-color: aquamarine;
 }
-.navbar-dark{
+img#img-banner {
+  width: 600px;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+/*.navbar-dark{
   background-color: orangered;
   width: 1200px;
   margin: 0 auto;
-
+*/
 }
-.btn{
+/*.btn{
 background-color: gold;
   color: black;
   border: 0;
@@ -27,7 +32,7 @@ background-color: gold;
   width: 100px;
   margin: 0 auto;
   margin-right: 200px;
-}
+}*/
 
 .container{
   margin-left: auto;

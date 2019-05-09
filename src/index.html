@@ -10,23 +10,75 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-        <header class="header">
-        <div class="container">
-          </div>
-        </header>
-        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
-            <div class="container">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <input type="button" class="btn btn-secondary.name" value="NOMBRE">
-                      <input type="button" id="a_z" class="btn btn-secondary" value="A-Z" >
-                      <input type="button" id="z_a" class="btn btn-secondary" value="Z_A">
+      <body id="index-page">
+          <div id="root">
+            <header id="header">
+              <div class="container-fluid" Align="center">
+                <div class="row">
+                  <div class="col">
+                    <img id="img-banner" src="">
                   </div>
-               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <input type="button" class="btn btn-secondary.name" value="NUMERO">
-                    <input type="button" id="number1to151" class="btn btn-secondary" value="1-151" >
-                    <input type="button" id="number151to1" class="btn btn-secondary" value="151_1">
                 </div>
-                <select class="btn btn-secondary"  id="select_type">
+              </div>
+              <nav id="nav-menu" class="navbar navbar-expand-lg navbar-light bg-light">
+              <a id="index-text" class="navbar-brand reset a-text"><img src="./Nueva carpeta/pika.jpg" alt="logo">Pokemon I Choose</a>
+              
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle a-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Ordenar
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <button type="button" ordered-by="id" id="number1to151" class="dropdown-item ordered-by" sort-order="asc">1-151</button>
+                              <button type="button" ordered-by="id" id="number151to1" class="dropdown-item ordered-by" sort-order="des">151-1</button>
+                              <button type="button" ordered-by="name" id="a_z"  sort-order="asc"  class="dropdown-item ordered-by">A-Z</button>
+                              <button type="button" ordered-by="name" id="z_a" sort-order="des" class="dropdown-item ordered-by">Z-A</button>
+                            </div>
+                        <select class="btn btn-outline-success my-2 my-sm-0"  id="select_type">
+                            <option value="all">Tipos de Pokémon</option>
+                            <option value="Water">Agua</option>
+                            <option value="Bug">Bicho</option>
+                            <option value="Dragon">Dragón</option>
+                            <option value="Electric">Eléctrico</option>
+                            <option value="Ghost">Fantasma</option>
+                            <option value="Fire">Fuego</option>
+                            <option value="Ice">Hielo</option>
+                            <option value="Fighting">Lucha</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Grass">Planta</option>
+                            <option value="Psychic">Psíquico</option>
+                            <option value="Rock">Roca</option>
+                            <option value="Ground">Tierra</option>
+                            <option value="Poison">Veneno</option>
+                            <option value="Flying">Volador</option>
+                          </select>
+                      </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" id="btn_search" type="submit">Search</button>
+                    </form>
+                  </div>       
+        </nav>
+      </header>
+
+            <!-- <form class="form-inline">
+              <div class="search-container"> -->
+              <!-- <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button id="btn_search" class="btn btn-secondary my-2 my-sm-0" type="button">BUSCAR</button>
+              </div>
+              </form>
+            </div>-->
+            <div id="result" class="row"></div>
+          </div>
+          <div id="calculate" style="display:none">
+              <select class="btn btn-secondary"  id="select_tatistics">
                   <option value="all">Tipos de Pokémon</option>
                   <option value="Water">Agua</option>
                   <option value="Bug">Bicho</option>
@@ -44,63 +96,32 @@
                   <option value="Poison">Veneno</option>
                   <option value="Flying">Volador</option>
                 </select>
-          <form class="form-inline">
-            <div class="search-container">
-            <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button id="btn_search" class="btn btn-secondary my-2 my-sm-0" type="button">BUSCAR</button>
-            </div>
-            </form>
+                <div><h3 id="answer"></h3></div>
           </div>
-        </nav>
-        <input  id="btn_statistics" type="button" class="btn btn-secondary" value="Estadística">
-        <div id="show_data"  style="display:block">
-          <div id="result" class="row"></div>
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div id="calculate" style="display:none">
-            <select class="btn btn-secondary"  id="select_tatistics">
-                <option value="all">Tipos de Pokémon</option>
-                <option value="Water">Agua</option>
-                <option value="Bug">Bicho</option>
-                <option value="Dragon">Dragón</option>
-                <option value="Electric">Eléctrico</option>
-                <option value="Ghost">Fantasma</option>
-                <option value="Fire">Fuego</option>
-                <option value="Ice">Hielo</option>
-                <option value="Fighting">Lucha</option>
-                <option value="Normal">Normal</option>
-                <option value="Grass">Planta</option>
-                <option value="Psychic">Psíquico</option>
-                <option value="Rock">Roca</option>
-                <option value="Ground">Tierra</option>
-                <option value="Poison">Veneno</option>
-                <option value="Flying">Volador</option>
-              </select>
-              <div><h3 id="answer"></h3></div>
+        <div class="modal-body">
+          <img class="modal-img" id="poke_img" src="http://www.serebii.net/pokemongo/pokemon/007.png" alt="img pokemon">
+          <p id="poke_num"></p>
+          <p id="poke_type"></p>
+          <p id="poke_height"></p>
+          <p id="poke_weight"></p>
+          <p id="poke_weaknesses"></p>
         </div>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal_title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img class="modal-img" id="poke_img" src="http://www.serebii.net/pokemongo/pokemon/007.png" alt="img pokemon">
-        <p id="poke_num"></p>
-        <p id="poke_type"></p>
-        <p id="poke_height"></p>
-        <p id="poke_weight"></p>
-        <p id="poke_weaknesses"></p>
-      </div>
-      <div class="modal-footer">
-        <p id="poke_statistics1" class="modal-p"></p>
-        <p id="poke_statistics2"></p>
+        <div class="modal-footer">
+          <p id="poke_statistics1" class="modal-p"></p>
+          <p id="poke_statistics2"></p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
       
     
 
