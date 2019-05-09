@@ -77,3 +77,9 @@ transform: translateY(-0.70em);
 border-width:2px;  
 border-style:solid;
 }
+.modal-title{
+  margin: 0 auto;
+}
+.modal{
+  text-align: center;
+}
