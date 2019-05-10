@@ -26,4 +26,3 @@ computeStats: (data, condition) => {
      return Math.round((result.length*100) / data.length)+"%";
    }
 };
-

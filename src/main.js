@@ -9,7 +9,6 @@ let container1To151 = document.getElementById("number1to151");
 let container151To1 = document.getElementById("number151to1");
 let containerSelect = document.getElementById("select_type");
 let cardHTML = "";
-
 //Función Crear Elementos html
 const showElements = (data) => {
   for (let i = 0; i < data.length; i++){
