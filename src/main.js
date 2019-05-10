@@ -78,10 +78,7 @@ const showModal = (id)=>{
   document.getElementById("modal_title").innerHTML=poke[0].name;
   document.getElementById("poke_img").src = poke[0].img;
   document.getElementById("poke_num").innerHTML="Number: "+ poke[0].num;
-  document.getElementById("poke_type").innerHTML ="Types: "+ poke[0].type;
-  // poke[0].type.forEach(type => {
-  // document.getElementById("poke_type").innerHTML += `<img class="type_img" src="./img/types/${type}.png" alt="type"> ${type}` + " ";
-  // });
+  document.getElementById("poke_type").innerHTML ="Type: "+ poke[0].type;
   document.getElementById("poke_height").innerHTML="Height: " + poke[0].height;
   document.getElementById("poke_weight").innerHTML="Weight: " + poke[0].weight;
   document.getElementById("poke_weaknesses").innerHTML= "Weaknesses: " + poke[0].weaknesses;
