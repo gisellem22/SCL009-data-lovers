@@ -35,9 +35,7 @@ showElements(radomData(allPokemon));
 containerBtnSearch.addEventListener("click", () => {
     cardHTML = "";
     search = document.getElementById("search").value;
-    showElements(window.pokemonData.filterData(allPokemon, search));
-    // showElements(window.pokemonData.byNumber(allPokemon, search));
-    // showElements(window.pokemonData.byType(allPokemon, search));
+    showElements(window.pokemonData.filterData(allPokemon, search))
 });
 
 //Select de tipos
