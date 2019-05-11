@@ -4,7 +4,7 @@
 
 ![logo](src/img/logo.jpg) 
 
-Para ir a la aplicación se puede acceder al seguiente link:
+Para ir a la página;
 
 [https://paulatorress.github.io/SCL009-data-lovers/src/index.html](https://paulatorress.github.io/SCL009-data-lovers/src/index.html)
 ***
@@ -71,7 +71,8 @@ del prototipo:
 ![prototipo de alta fidelidad 3](src/img/alta3.jpg) 
 ![prototipo de alta fidelidad 4](src/img/alta4.jpg) 
 
-[zeplin](https://www.figma.com/file/IGPGpvWNb7s7NKUOIjWHsV4a/Untitled?node-id=0%3A1)
+Link:
+[zeplin](https://zpl.io/V0LKg4K)
 
 ## Testeos de usabilidad
 
@@ -81,7 +82,7 @@ necesitan los usuarios a la hora de interactuar con una web sobre Pokemón. Reci
 Con la encuesta fue posible definir más detalles sobre el perfil de nuestro usuario - un 58,3% de los entrevistados tenían entre 21 e 30 años y un 33,3% tenían entre 31 y 41 años de edad - así que nuestro usuario tiene entre 20 e 40 años de edad.
 ![encuesta](src/img/edad.jpg) 
 
-Igualmente fue posible definir el nivel de nuestro usuario en relacción al juego Pokémon GO. Eligimos enfocar en el usuario principiante, una vez que al preguntar a los entrevistados su nivel de jugador, el porcentaje de cada opción fueron equitativos.
+Igualmente fue posible definir el nivel de nuestro usuario en relacción al juego Pokémon GO. Eligimos enfocar en el usuario principiante, una vez que al preguntar a los entrevistados su nivel de jugador, el porcentaje de cada opción fueron equitativos. 
 ![encuesta](src/img/nivel.jpg) 
  
 Un 29% de los entrevistados dijeron lo que los hace gustar a los pokémons son su diferentes habilidades como tipo, debilidad , etc. Así que nos enfocamos en mostrar estos datos en las tarjetas de descripción de cada Pokémon.
