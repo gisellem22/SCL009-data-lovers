@@ -163,8 +163,8 @@ describe('pokemonData', () => {
       assert.deepEqual( window.pokemonData.findPokemon(data, data[0].id), [data[0]]);
     });
   });
+   
   describe('pokemonData.computeStats', () => {
-
     it('debería ser una función', () => {
       assert.equal(typeof window.pokemonData.computeStats, 'function');
     });

@@ -9,7 +9,6 @@ let container1To151 = document.getElementById("number1to151");
 let container151To1 = document.getElementById("number151to1");
 let containerSelect = document.getElementById("select_type");
 let cardHTML = "";
-
 //Función Crear Elementos html
 const showElements = (data) => {
   for (let i = 0; i < data.length; i++){
@@ -76,7 +75,7 @@ const showModal = (id)=>{
   document.getElementById("modal_title").innerHTML=poke[0].name;
   document.getElementById("poke_img").src = poke[0].img;
   document.getElementById("poke_num").innerHTML="Number: "+ poke[0].num;
-  document.getElementById("poke_type").innerHTML ="Type: "+ poke[0].type;
+  document.getElementById("poke_type").innerHTML ="Types: "+ poke[0].type;
   document.getElementById("poke_height").innerHTML="Height: " + poke[0].height;
   document.getElementById("poke_weight").innerHTML="Weight: " + poke[0].weight;
   document.getElementById("poke_weaknesses").innerHTML= "Weaknesses: " + poke[0].weaknesses;
