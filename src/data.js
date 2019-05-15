@@ -15,11 +15,6 @@ window.pokemonData = {
     return data.sort((a,b) => b[sortBy].localeCompare(a[sortBy]));
       }
  } 
- ,
-findPokemon: (data, pokeData) => {
-  const result = data.filter( pokemon => pokemon.id === pokeData);
-  return result;
-}
 ,
 computeStats: (data, condition) => {
     let result = data.filter((a)=> a.type[0]===condition || a.type[1]===condition);
