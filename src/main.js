@@ -10,6 +10,9 @@ fetch('./data.json')
     // Do something for an error here
   })
 
+
+  
+
 //Declaración de Variables
 const allPokemon = window.POKEMON.pokemon;
 let containerBtnSearch = document.getElementById("btn_search");
