@@ -1,5 +1,10 @@
+fetch('https://raw.githubusercontent.com/gisellem22/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
+      .then(response => 
+       response.json())
+      .then(data => {
 //Declaración de Variables
-const allPokemon = window.POKEMON.pokemon;
+// const allPokemon = window.POKEMON.pokemon;
+const allPokemon = data.pokemon;
 let containerBtnSearch = document.getElementById("btn_search");
 let containerResult = document.getElementById("result");
 let search;
@@ -9,11 +14,20 @@ let container1To151 = document.getElementById("number1to151");
 let container151To1 = document.getElementById("number151to1");
 let containerSelect = document.getElementById("select_type");
 let cardHTML = "";
+//let containerShowStatistics = document.getElementById("show_statistics");
+//let containerShowResult = document.getElementById("show_result");
+//let containerStatisticsType =document.getElementById("statistics_type");
+
+//Función para Primera Letra Mayúscula
+const firstToUpperCase = (string) => {
+  return string.charAt(0).toUpperCase()+string.slice(1);
+  };
+
 //Función Crear Elementos html
 const showElements = (data) => {
   for (let i = 0; i < data.length; i++){
     cardHTML +=
-     `<div class="card " style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+     `<div class="card" style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
   <img class="card-img-top" src=${data[i].img} alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${data[i].name}</h5>
@@ -26,7 +40,8 @@ const showElements = (data) => {
 
 //Cards Aleatorios por defecto
 const radomData = (data)=>{
-  return data.sort(() => Math.random() - 0.5)
+  let result = data;
+  return result.sort(() => Math.random() - 0.5)
 };
 showElements(radomData(allPokemon));
 
@@ -34,7 +49,7 @@ showElements(radomData(allPokemon));
 containerBtnSearch.addEventListener("click", () => {
     cardHTML = "";
     search = document.getElementById("search").value;
-    showElements(window.pokemonData.filterData(allPokemon, search))
+    showElements(window.pokemonData.filterData(allPokemon, firstToUpperCase(search.toLowerCase())))
 });
 
 //Select de tipos
@@ -47,44 +62,81 @@ containerSelect.addEventListener("change", () => {
 //Botón Ordenar por Nombre de A a Z
 containerAZ.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"name", "increasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"name", true));
 });
 
 //Botón Ordenar por Nombre de Z a A
 containerZA.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"name", "decreasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"name", false));
 });
 
 //Botón Ordenar por Nombre de 1 a 151
 container1To151.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"num", "increasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"num", true));
 });
 
 //Botón Ordenar por Nombre de 151 a 1
 container151To1.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"num", "decreasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"num", false));
 });
-
+// //Botón mostrar Estadística
+// containerStatisticsType.addEventListener("click", () => {
+//   containerShowResult.style.display = (containerShowResult.style.display=="block") ?"none" : "block";
+//   containerShowStatistics.style.display = (containerShowStatistics.style.display == "none") ?"block" : "none"; 
+// })
+const showPrevEvolution =(pokemon)=>{
+  if (pokemon[0].prev_evolution){
+    let prev = pokemon[0].prev_evolution[0].name;
+    let prevEvolution = allPokemon.filter((a) => a.name === prev);
+    return document.getElementById("prev_evolution").innerHTML = `<div class="col-8 col-sm-6"><p>Previews Evolution</p><img class="modal-img" src="${prevEvolution[0].img}" alt="">${prevEvolution[0].name}</div>`;
+  } else{
+    return "";
+  }
+};
+const showNextEvolution = (pokemon)=>{
+  if (pokemon[0].next_evolution){
+    let next = pokemon[0].next_evolution[0].name;
+    let nextEvolution = allPokemon.filter((a) => a.name === next);
+    return document.getElementById("next_evolution").innerHTML = `<div class="col-8 col-sm-6"><p>Next Evolution</p><img class="modal-img" src="${nextEvolution[0].img}" alt="">${nextEvolution[0].name}</div>`;
+  } else{
+    return "";
+}
+};
 //Función que pasa los datos de los pokemones al modal
 const showModal = (id)=>{
-  let poke = window.pokemonData.findPokemon(allPokemon, id);
+  let poke = allPokemon.filter((a) => a.id === id);
   let type1 = poke[0].type[0];
   document.getElementById("modal_title").innerHTML=poke[0].name;
   document.getElementById("poke_img").src = poke[0].img;
   document.getElementById("poke_num").innerHTML="Number: "+ poke[0].num;
-  document.getElementById("poke_type").innerHTML ="Types: "+ poke[0].type;
+  document.getElementById("poke_type").innerHTML ="Type: "+ poke[0].type;
   document.getElementById("poke_height").innerHTML="Height: " + poke[0].height;
   document.getElementById("poke_weight").innerHTML="Weight: " + poke[0].weight;
   document.getElementById("poke_weaknesses").innerHTML= "Weaknesses: " + poke[0].weaknesses;
   document.getElementById("poke_statistics").innerHTML= "Un "+ window.pokemonData.computeStats(allPokemon, type1) + " de los Pokémons son de tipo " + poke[0].type[0];
-  document.getElementById("percentage").innerHTML= poke[0].type[0] + " " + window.pokemonData.computeStats(allPokemon, type1)
-};
-window.showModal=showModal;
-
-
+  document.getElementById("percentage").innerHTML= poke[0].type[0] + " " + window.pokemonData.computeStats(allPokemon, type1);
+  document.getElementById("prev_evolution").innerHTML = "";
+  document.getElementById("next_evolution").innerHTML = "";
+  showPrevEvolution(poke);
+  showNextEvolution(poke);
+  };
+  window.showModal=showModal;
+});
+//   const ctx = document.getElementsByClassName("line-chart");
+//   const myGraph = new Chart(ctx, {
+//     type: 'horizontalBar',
+//     data: {
+//       labels:["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"],
+//       datasets:[{
+//         label: "porcentaje %",
+//         data: [21,8,5],
+//         backgroundColor: "rgb(253, 236, 85)"
+//       }]
+// }});
+//       
 // const showElements = (data) => {
 //   data.forEach(element => {
 //     cardHTML +=

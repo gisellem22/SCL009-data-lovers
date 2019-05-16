@@ -16,7 +16,7 @@
           </div>
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand"><img src="./img/pikachu.png " alt="logo">POKÉMON I CHOOSE YOU</a>
+            <a class="navbar-brand"><img src="./img/pikachu.png " alt="logo"> POKÉMON I CHOOSE YOU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
  
               <span class="navbar-toggler-icon"></span>
@@ -36,8 +36,19 @@
                   </div> 
                 </li>
               </ul>
+              <!-- <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ESTADÍSTICA
+                    </a> -->
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#" id="statistics_type">Tipos de Pokémon</a> -->
+                      <!-- <a class="dropdown-item" href="#" id="z_a">Z-A</a>
+                      <a class="dropdown-item" href="#" id="number1to151">1-151</a>
+                      <a class="dropdown-item" href="#" id="number151to1">151-1</a> -->
+                    </div> 
               <form class="form-inline my-2 my-lg-0"></form>
-              <select class="btn btn-outline-success my-2 my-sm-0"  id="select_type">
+              <select class="form-control mr-sm-2"  id="select_type">
                   <option value="all">Tipos de Pokémon</option>
                   <option value="Water">Agua</option>
                   <option value="Bug">Bicho</option>
@@ -56,20 +67,24 @@
                   <option value="Flying">Volador</option>
                 </select>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" id="btn_search" type="button">Search</button>
+                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn my-2 my-sm-0" id="btn_search" type="button">Buscar</button>
               </form>
-            </div>
           </nav>
+          <div id="show_result" class="div-result" style="display:block">
           <div id="result" class="row"></div>
+        </div>
+        <!-- <div id="show_statistics" style="display:none">
+          <canvas class="line-chart"></canvas> -->
+        <!-- </div> -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modal_title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button> -->
       </div>
       <div class="modal-body">
         <img class="modal-img" id="poke_img" src="http://www.serebii.net/pokemongo/pokemon/007.png" alt="img pokemon">
@@ -85,18 +100,22 @@
             <div class="progress-bar bg-info text-right" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
           </div>
           <p id="poke_statistics" class="modal-p"></p>
+          <div class="row">
+                <div id="prev_evolution" class="col-8 col-sm-6"></div>
+                <div id="next_evolution" class="col-4 col-sm-6"></div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
-  </div>
-</div>
-      
-    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./data/pokemon/pokemon.js"></script>
+    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <script src="data.js"></script>
     <script src="main.js"></script>
+    <!-- link chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
   </body>
 </html>

@@ -3,29 +3,31 @@ body{
   height: 600px;
   background-color: aquamarine;
 }
+
+.navbar-brand{
+margin-left: 10px;
+}
+
 .btn{
 background-color: gold;
   color: black;
   border: 0;
-}
-.btn-group{
-  background-color: gold;
-  width: 100px;
-  margin: 0 auto;
-  margin-right: 200px;
+  margin-right: 10px;
 }
 
 .container{
   margin-left: auto;
   margin-right: auto;
 }
-.btn-secondary:not(:disabled):not(.disabled).active{
-background-color: orange;
-color: black;
-}
+
 .btn-secondary:hover,
 .btn-secondary:focus{
   background-color: orange;
+}
+.form-control{
+  width: 200px;
+  height: 38px;
+  margin-right: 20px;
 }
 .card {
   color: white;
@@ -38,10 +40,10 @@ color: black;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
-  margin-right: 40px;
+  margin-right: 10px;
 }
 .card img {
-  
+
   width: 130px;
   height: 130px;
   align-self: center;
@@ -49,26 +51,40 @@ color: black;
 }
 .card-body{
   width: 200px;
-  height: 140px; 
+  height: 140px;
   padding: 0px;
 }
 
-.row {
-  margin-left: 65px;
+.div-result {
+  margin-top: 15px;
+  margin-left: 30px;
 }
+
 .card:hover,
 .card:focus {
-box-shadow: 0 0.9em 0.9em -0.4em rgb(60, 63, 60);
+box-shadow: 0 0.9em 0.9em -0.4em rgb(62, 63, 60);
 transform: translateY(-0.70em);
-border-width:2px;  
+border-width:2px;
 border-style:solid;
 }
-.modal-title{
+/* .modal-title{
   margin: 0 auto;
-}
-.modal{
-  text-align: center;
+} */
+.modal-header{
+  margin: 0 auto;
 }
 .type_img{
   width: 7%;
 }
+.modal-content{
+  text-align: center;
+  width: 500px;
+  height: 700px;
+  padding: 0px;
+}
+/* .modal-img{
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  margin: 1em;
+} */
