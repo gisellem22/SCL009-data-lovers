@@ -36,6 +36,17 @@
                   </div> 
                 </li>
               </ul>
+              <!-- <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ESTADÍSTICA
+                    </a> -->
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#" id="statistics_type">Tipos de Pokémon</a> -->
+                      <!-- <a class="dropdown-item" href="#" id="z_a">Z-A</a>
+                      <a class="dropdown-item" href="#" id="number1to151">1-151</a>
+                      <a class="dropdown-item" href="#" id="number151to1">151-1</a> -->
+                    </div> 
               <form class="form-inline my-2 my-lg-0"></form>
               <select class="form-control mr-sm-2"  id="select_type">
                   <option value="all">Tipos de Pokémon</option>
@@ -59,9 +70,12 @@
                 <input class="form-control mr-sm-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
                 <button class="btn my-2 my-sm-0" id="btn_search" type="button">Buscar</button>
               </form>
-            </div>
           </nav>
+          <div id="show_result" class="div-result" style="display:block">
           <div id="result" class="row"></div>
+        </div>
+        <!-- <div id="show_statistics" style="display:none">
+          <canvas class="line-chart"></canvas> </div>-->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -93,10 +107,6 @@
           </div>
       </div>
     </div>
-  </div>
-</div>
-      
-    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -104,5 +114,7 @@
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <script src="data.js"></script>
     <script src="main.js"></script>
+    <!-- link chart js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script> -->
   </body>
 </html>

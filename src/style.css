@@ -55,14 +55,14 @@ background-color: gold;
   padding: 0px;
 }
 
-.row {
+.div-result {
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 .card:hover,
 .card:focus {
-box-shadow: 0 0.9em 0.9em -0.4em rgb(60, 63, 60);
+box-shadow: 0 0.9em 0.9em -0.4em rgb(62, 63, 60);
 transform: translateY(-0.70em);
 border-width:2px;
 border-style:solid;
