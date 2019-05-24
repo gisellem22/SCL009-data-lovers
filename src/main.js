@@ -1,20 +1,10 @@
-fetch('./data.json')
-  .then(response => {
-    return response.json()
-  })
-  .then(data => {
-    // Work with JSON data here
-    console.log(data)
-  })
-  .catch(err => {
-    // Do something for an error here
-  })
-
-
-  
-
+fetch('https://raw.githubusercontent.com/gisellem22/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
+      .then(response => 
+       response.json())
+      .then(data => {
 //Declaración de Variables
-const allPokemon = window.POKEMON.pokemon;
+// const allPokemon = window.POKEMON.pokemon;
+const allPokemon = data.pokemon;
 let containerBtnSearch = document.getElementById("btn_search");
 let containerResult = document.getElementById("result");
 let search;
@@ -24,6 +14,9 @@ let container1To151 = document.getElementById("number1to151");
 let container151To1 = document.getElementById("number151to1");
 let containerSelect = document.getElementById("select_type");
 let cardHTML = "";
+//let containerShowStatistics = document.getElementById("show_statistics");
+//let containerShowResult = document.getElementById("show_result");
+//let containerStatisticsType =document.getElementById("statistics_type");
 
 //Función para Primera Letra Mayúscula
 const firstToUpperCase = (string) => {
@@ -47,7 +40,8 @@ const showElements = (data) => {
 
 //Cards Aleatorios por defecto
 const radomData = (data)=>{
-  return data.sort(() => Math.random() - 0.5)
+  let result = data;
+  return result.sort(() => Math.random() - 0.5)
 };
 showElements(radomData(allPokemon));
 
@@ -68,26 +62,31 @@ containerSelect.addEventListener("change", () => {
 //Botón Ordenar por Nombre de A a Z
 containerAZ.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"name", "increasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"name", true));
 });
 
 //Botón Ordenar por Nombre de Z a A
 containerZA.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"name", "decreasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"name", false));
 });
 
 //Botón Ordenar por Nombre de 1 a 151
 container1To151.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"num", "increasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"num", true));
 });
 
 //Botón Ordenar por Nombre de 151 a 1
 container151To1.addEventListener("click", () => {
   cardHTML = "";
-  showElements(window.pokemonData.sortData(allPokemon,"num", "decreasing"));
+  showElements(window.pokemonData.sortData(allPokemon,"num", false));
 });
+// //Botón mostrar Estadística
+// containerStatisticsType.addEventListener("click", () => {
+//   containerShowResult.style.display = (containerShowResult.style.display=="block") ?"none" : "block";
+//   containerShowStatistics.style.display = (containerShowStatistics.style.display == "none") ?"block" : "none"; 
+// })
 const showPrevEvolution =(pokemon)=>{
   if (pokemon[0].prev_evolution){
     let prev = pokemon[0].prev_evolution[0].name;
@@ -124,7 +123,20 @@ const showModal = (id)=>{
   showPrevEvolution(poke);
   showNextEvolution(poke);
   };
-
+  window.showModal=showModal;
+});
+//   const ctx = document.getElementsByClassName("line-chart");
+//   const myGraph = new Chart(ctx, {
+//     type: 'horizontalBar',
+//     data: {
+//       labels:["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"],
+//       datasets:[{
+//         label: "porcentaje %",
+//         data: [21,8,5],
+//         backgroundColor: "rgb(253, 236, 85)"
+//       }]
+// }});
+//       
 // const showElements = (data) => {
 //   data.forEach(element => {
 //     cardHTML +=
@@ -158,3 +170,15 @@ const showModal = (id)=>{
 //   showData.style.display = (showData.style.display=="block") ?"none" : "block";
 //   showCalculation.style.display = (showCalculation.style.display == "none") ?"block" : "none";
 // });
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
