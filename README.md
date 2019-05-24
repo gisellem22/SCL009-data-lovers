@@ -1,9 +1,9 @@
 # Data Lovers
 ![logo](src/img/logo.jpg) 
 
-Para ir a la página;
+Para ir a la página:
 
-[https://paulatorress.github.io/SCL009-data-lovers/src/index.html](https://paulatorress.github.io/SCL009-data-lovers/src/index.html)
+[https://gisellem22.github.io/SCL009-data-lovers/src/index.html](https://gisellem22.github.io/SCL009-data-lovers/src/index.html)
 
 ***
 **Pokemom I Choose U**
