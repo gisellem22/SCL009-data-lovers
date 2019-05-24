@@ -170,15 +170,3 @@ const showModal = (id)=>{
 //   showData.style.display = (showData.style.display=="block") ?"none" : "block";
 //   showCalculation.style.display = (showCalculation.style.display == "none") ?"block" : "none";
 // });
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
