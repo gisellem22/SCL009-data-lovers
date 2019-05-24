@@ -1,11 +1,12 @@
 # Data Lovers
-
 ![logo](src/img/logo.jpg) 
 
 Para ir a la página;
 
 [https://paulatorress.github.io/SCL009-data-lovers/src/index.html](https://paulatorress.github.io/SCL009-data-lovers/src/index.html)
+
 ***
+**Pokemom I Choose U**
 
 # POKÉMON I CHOOSE YOU
 
@@ -90,4 +91,3 @@ Link:
 Con nuestro prototipo de baja fidelidad notamos que ciertos aspectos no calzaban de acuerdo a los principios de diseño (balance, proximidad, alineación, repetición, contraste y espacio.
 Los botones en la barra de navegación (nombre y número) eran poco claros a la hora de entender que quería hacer el usuario (según nuestra 2° historia de usuario "Ordenar")
 Quedando como solución en nuestra web un botón llamado "Ordenar" el cual permite al usuario poder visualizar la data de los 151 Pokémon desde la A - Z y Z - A y de la misma manera pero con números 1 - 151 y 151 - 1. Dejando la data de manera ordenada según se adapte a lo que prefiera el usuario (letra o número).
-
