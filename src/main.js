@@ -27,7 +27,7 @@ const firstToUpperCase = (string) => {
 const showElements = (data) => {
   for (let i = 0; i < data.length; i++){
     cardHTML +=
-     `<div class="card" style="width: 200px;" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
+     `<div class="card m-2 p-0" data-toggle="modal" data-target="#exampleModalCenter" onclick="showModal(${data[i].id})">
   <img class="card-img-top" src=${data[i].img} alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${data[i].name}</h5>
