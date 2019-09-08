@@ -31,7 +31,7 @@ const showElements = (data) => {
   <img class="card-img-top" src=${data[i].img} alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${data[i].name}</h5>
-    <p class="card-text">#${data[i].num}.</p>
+    <p class="card-text">#${data[i].num}</p>
     <p class="card-text">Type: ${data[i].type}.</p>
   </div>
 </div>`
@@ -91,7 +91,7 @@ const showPrevEvolution =(pokemon)=>{
   if (pokemon[0].prev_evolution){
     let prev = pokemon[0].prev_evolution[0].name;
     let prevEvolution = allPokemon.filter((a) => a.name === prev);
-    return document.getElementById("prev_evolution").innerHTML = `<div class="col-8 col-sm-6"><p>Previews Evolution</p><img class="modal-img" src="${prevEvolution[0].img}" alt="">${prevEvolution[0].name}</div>`;
+    return document.getElementById("prev_evolution").innerHTML = `<div class="col-8 col-sm-6"><img class="modal-img" src="${prevEvolution[0].img}" alt="">${prevEvolution[0].name}</div>`;
   } else{
     return "";
   }
@@ -100,7 +100,7 @@ const showNextEvolution = (pokemon)=>{
   if (pokemon[0].next_evolution){
     let next = pokemon[0].next_evolution[0].name;
     let nextEvolution = allPokemon.filter((a) => a.name === next);
-    return document.getElementById("next_evolution").innerHTML = `<div class="col-8 col-sm-6"><p>Next Evolution</p><img class="modal-img" src="${nextEvolution[0].img}" alt="">${nextEvolution[0].name}</div>`;
+    return document.getElementById("next_evolution").innerHTML = `<div class="col-8 col-sm-6"><img class="modal-img" src="${nextEvolution[0].img}" alt="">${nextEvolution[0].name}</div>`;
   } else{
     return "";
 }

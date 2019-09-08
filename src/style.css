@@ -16,7 +16,7 @@ body{
   background-size: cover;
   /* background-repeat: no-repeat; */
   background-position: center;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 .card img {
   
@@ -32,20 +32,41 @@ body{
 }
 .card:hover,
 .card:focus {
-  box-shadow: 0 0.9em 0.9em -0.4em rgb(62, 63, 60);
-  transform: translateY(-0.70em);
-  border-width:2px;
+  box-shadow: 0 20px 40px -0.3em rgb(62, 63, 60);
+  /* transform: translateY(-0.70em); */
+  /* border-width:2px; */
   border-style:solid;
 }
-.modal-header{
+/* .modal-header{
   margin: 0 auto;
-}
+} */
 .type_img{
   width: 7%;
 }
-.modal-content{
+div.modal-content{
+  background-image: url(https://i.pinimg.com/originals/dc/92/80/dc9280d6d991e4dfdaff0b16bf4764f8.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  color: #ffffff;
+  border-radius: 20px;
+}
+h4#div-modal-title {
   text-align: center;
-  width: 500px;
-  height: 700px;
-  padding: 0px;
+  padding-top: 15px;
+}
+div#div-modal-img{
+  text-align: center;
+  padding-bottom: 15px;
+}
+div#modal-pkmn-info {
+  padding-top: 12px;
+}
+ul#modal-ul {
+  padding: 0;
+}
+.close {
+    color: white;
+    text-shadow: 0 1px 0 #fff;
+    opacity:1;
 }
