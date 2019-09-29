@@ -1,6 +1,6 @@
 window.pokemonData = {
   filterData: (data,condition) => {
-    if (["Water","Bug","Dragon","Electric","Ghost","Fire","Ice","Fighting","Normal","Grass","Psychic","Rock","Ground","Poison","Flying"].includes(condition)){
+    if (data.map(a => a.type).flat().includes(condition)){
       return data.filter((a)=> a.type[0]===condition || a.type[1]===condition)
     } else {
       return data.filter((a) => a.name === condition || a.id === parseInt(condition));
