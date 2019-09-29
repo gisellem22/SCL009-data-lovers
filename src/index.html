@@ -15,9 +15,8 @@
 
 <body>
   <header>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"><img src="./img/pikachu.png " alt="logo"> POKÉMON I CHOOSE YOU</a>
+      <a class="navbar-brand" href="#"><img src="./img/pikachu.png " class="img-logo mr-1" alt="logo"> POKÉMON I CHOOSE YOU</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,51 +56,55 @@
             <option value="Flying">Volador</option>
           </select>
           <input class="form-control mr-sm-2" type="search" id="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-warning my-2 my-sm-0" type="submit" id="btn_search">Buscar</button>
+          <button class="btn btn-warning my-2 my-sm-0" type="button" id="btn_search">Buscar</button>
         </form>
       </div>
     </nav>
   </header>
   <main>
-    <div class="container mt-2" id="show_result" style="display:block">
-      <div id="result" class="row justify-content-center">
-      </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal_title"></h5>
-          </div>
-          <div class="modal-body">
-            <img class="modal-img" id="poke_img" src="http://www.serebii.net/pokemongo/pokemon/007.png"
-              alt="img pokemon">
-            <p id="poke_num"></p>
-            <p id="poke_type"></p>
-            <p id="poke_height"></p>
-            <p id="poke_weight"></p>
-            <p id="poke_weaknesses"></p>
-            <div class="progress">
-              <div class="progress-bar bg-success text-right" id="percentage" role="progressbar" style="width: 25%"
-                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar bg-info text-right" role="progressbar" style="width: 100%" aria-valuenow="100"
-                aria-valuemin="0" aria-valuemax="100">100%</div>
-            </div>
-            <p id="poke_statistics" class="modal-p"></p>
-            <div class="row">
-              <div id="prev_evolution" class="col-8 col-sm-6"></div>
-              <div id="next_evolution" class="col-4 col-sm-6"></div>
+    <section class="container mt-2" id="show_result" style="display:block">
+      <div id="result" class="row justify-content-center"></div>
+    </section>
+    <section>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal_title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img class="modal-img" id="poke_img" src="http://www.serebii.net/pokemongo/pokemon/007.png"
+                  alt="img pokemon">
+                <p id="poke_num"></p>
+                <p id="poke_type"></p>
+                <p id="poke_height"></p>
+                <p id="poke_weight"></p>
+                <p id="poke_weaknesses"></p>
+                <div class="progress">
+                  <div class="progress-bar bg-success text-right" id="percentage" role="progressbar" style="width: 25%"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-info text-right" role="progressbar" style="width: 100%"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <p id="poke_statistics" class="modal"></p>
+                <div class="row">
+                  <div id="prev_evolution" class="col-4 col-sm-6"></div>
+                  <div id="next_evolution" class="col-4 col-sm-6"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
+        </div>
+      </section>
   </main>
+
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
