@@ -3,20 +3,19 @@
   padding: 0%;
   box-sizing: border-box;
 }
-body{ 
+body {
   background-color: aquamarine;
   margin: 0%;
   padding: 0%;
 }
-.navbar-brand{
+.navbar-brand {
   font-size: 16px;
-  }
-
+}
 
 .card {
   color: white;
   width: 200px;
-  height: 260px;
+  height: 300px;
   text-align: center;
   background-image: url(https://i.pinimg.com/originals/dc/92/80/dc9280d6d991e4dfdaff0b16bf4764f8.jpg);
   background-size: cover;
@@ -25,13 +24,12 @@ body{
   border-radius: 20px;
 }
 .card img {
-  
   width: 130px;
   height: 130px;
   align-self: center;
   margin: 1em;
 }
-.card-body{
+.card-body {
   width: 200px;
   height: 140px;
   padding: 0px;
@@ -39,12 +37,12 @@ body{
 .card:hover,
 .card:focus {
   box-shadow: 0 20px 40px -0.3em rgb(62, 63, 60);
-  border-style:solid;
+  border-style: solid;
 }
-.type_img{
+.type_img {
   width: 7%;
 }
-div.modal-content{
+div.modal-content {
   background-image: url(https://i.pinimg.com/originals/dc/92/80/dc9280d6d991e4dfdaff0b16bf4764f8.jpg);
   background-size: cover;
   background-position: center;
@@ -55,7 +53,7 @@ h4#div-modal-title {
   text-align: center;
   padding-top: 15px;
 }
-div#div-modal-img{
+div#div-modal-img {
   text-align: center;
   padding-bottom: 15px;
 }
@@ -66,20 +64,142 @@ ul#modal-ul {
   padding: 0;
 }
 .close {
-    color: white;
-    text-shadow: 0 1px 0 #fff;
-    opacity:1;
+  color: white;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 1;
 }
-@media screen and (min-width:320px) and (max-width:995px){
-  .img-logo {
-    width: 40px;
-    }
+
+.icon {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  transition: 200ms all;
 }
-@media screen and (max-width:320px){
+
+.icon:hover {
+  filter: saturate(200%);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.icon img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+}
+
+.bug {
+  background: #92bc2c;
+  box-shadow: 0 0 20px #92bc2c;
+}
+
+.dark {
+  background: #595761;
+  box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+  background: #0c69c8;
+  box-shadow: 0 0 20px #0c69c8;
+}
+
+.electric {
+  background: #f2d94e;
+  box-shadow: 0 0 20px #f2d94e;
+}
+
+.fire {
+  background: #fba54c;
+  box-shadow: 0 0 20px #fba54c;
+}
+
+.fairy {
+  background: #ee90e6;
+  box-shadow: 0 0 20px #ee90e6;
+}
+
+.fighting {
+  background: #d3425f;
+  box-shadow: 0 0 20px #d3425f;
+}
+
+.flying {
+  background: #a1bbec;
+  box-shadow: 0 0 20px #a1bbec;
+}
+
+.ghost {
+  background: #5f6dbc;
+  box-shadow: 0 0 20px #5f6dbc;
+}
+
+.grass {
+  background: #5fbd58;
+  box-shadow: 0 0 20px #5fbd58;
+}
+
+.ground {
+  background: #da7c4d;
+  box-shadow: 0 0 20px #da7c4d;
+}
+
+.ice {
+  background: #75d0c1;
+  box-shadow: 0 0 20px #75d0c1;
+}
+
+.normal {
+  background: #a0a29f;
+  box-shadow: 0 0 20px #a0a29f;
+}
+
+.poison {
+  background: #b763cf;
+  box-shadow: 0 0 20px #b763cf;
+}
+
+.psychic {
+  background: #fa8581;
+  box-shadow: 0 0 20px #fa8581;
+}
+
+.rock {
+  background: #c9bb8a;
+  box-shadow: 0 0 20px #c9bb8a;
+}
+
+.steel {
+  background: #5695a3;
+  box-shadow: 0 0 20px #5695a3;
+}
+
+.water {
+  background: #539ddf;
+  box-shadow: 0 0 20px #539ddf;
+}
+
+.evolution-poke {
+  border-radius: 4px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.247);
+}
+
+@media screen and (min-width: 320px) and (max-width: 995px) {
   .img-logo {
     width: 40px;
   }
-  .navbar-brand{
-    font-size: 14px;
 }
+@media screen and (max-width: 575px) {
+  #next_evolution {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .img-logo {
+    width: 40px;
+  }
+  .navbar-brand {
+    font-size: 14px;
+  }
 }
