@@ -15,9 +15,6 @@ fetch(
     let container151To1 = document.getElementById("number151to1");
     let containerSelect = document.getElementById("select_type");
     let cardHTML = "";
-    //let containerShowStatistics = document.getElementById("show_statistics");
-    //let containerShowResult = document.getElementById("show_result");
-    //let containerStatisticsType =document.getElementById("statistics_type");
 
     //Función para Primera Letra Mayúscula
     const firstToUpperCase = (string) => {
@@ -43,7 +40,6 @@ fetch(
     // <img src="./icons/${data[i].type}.svg" style="width: 30px; margin-top: -80px;" alt="" />
 
     const getTypeIcon = (types) => {
-      console.log(types);
       let typesHTML = "";
 
       types.forEach((type) => {
@@ -62,16 +58,24 @@ fetch(
     };
     showElements(radomData(allPokemon));
 
-    //Botón Search
-    containerBtnSearch.addEventListener("click", () => {
+    // Search
+    document.getElementById("search").addEventListener("keyup", function (e) {
       cardHTML = "";
       search = document.getElementById("search").value;
-      showElements(
-        window.pokemonData.filterData(
-          allPokemon,
-          firstToUpperCase(search.toLowerCase())
-        )
+      const pokeList = window.pokemonData.filterData(
+        allPokemon,
+        firstToUpperCase(search.toLowerCase())
       );
+      if (pokeList.length > 0) {
+        showElements(pokeList);
+      } else {
+        containerResult.innerHTML = `
+        <div class="d-flex flex-column align-items-center mt-5">
+        <h1>Pokémon Not Found</h1>
+        <img src="./img/pokemon-not-found.png" alt="" style="width: 200px; margin-top: 1rem">
+        </div>
+        `;
+      }
     });
 
     //Select de tipos
@@ -138,7 +142,6 @@ fetch(
       let poke = allPokemon.filter((a) => a.id === id);
       let pokeType = getTypeIcon(poke[0].type);
       let pokeTypeWeak = getTypeIcon(poke[0].weaknesses);
-      console.log(poke[0]);
 
       document.getElementById("modal_title").innerHTML = `
       <h4 class="modal-title">${poke[0].name}</h4>
