@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 fetch(
   "https://raw.githubusercontent.com/gisellem22/SCL009-data-lovers/master/src/data/pokemon/pokemon.json"
 )
@@ -6,14 +7,10 @@ fetch(
     //Declaración de Variables
     // const allPokemon = window.POKEMON.pokemon;
     const allPokemon = data.pokemon;
-    let containerBtnSearch = document.getElementById("btn_search");
+    const formPokeSorter = document.formPokeSorter.groupPokeSorter;
     let containerResult = document.getElementById("result");
     let search;
-    let containerAZ = document.getElementById("a_z");
-    let containerZA = document.getElementById("z_a");
-    let container1To151 = document.getElementById("number1to151");
-    let container151To1 = document.getElementById("number151to1");
-    let containerSelect = document.getElementById("select_type");
+    let containerSelect = document.getElementById("pokeTypeSelect");
     let cardHTML = "";
 
     //Función para Primera Letra Mayúscula
@@ -29,7 +26,7 @@ fetch(
   <img class="card-img-top" src=${data[i].img} alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${data[i].name}</h5>
-    <p class="pb-1">#${data[i].num}</p>
+    <p class="pb-1">${data[i].num}</p>
     <span class="text-center">${pokeType}.</span>
     
   </div>
@@ -51,15 +48,16 @@ fetch(
       return typesHTML;
     };
 
-    //Cards Aleatorios por defecto
-    const radomData = (data) => {
-      let result = data;
-      return result.sort(() => Math.random() - 0.5);
-    };
-    showElements(radomData(allPokemon));
+    //Cards 1-151 first Load
+    showElements(window.pokemonData.sortData(allPokemon, "num", true));
 
     // Search
     document.getElementById("search").addEventListener("keyup", function (e) {
+      console.log(e);
+      const iconSearch = document.getElementById("iconSearch");
+      iconSearch.style.display = /^\s*$/.test(e.target.value)
+        ? "block"
+        : "none";
       cardHTML = "";
       search = document.getElementById("search").value;
       const pokeList = window.pokemonData.filterData(
@@ -72,7 +70,7 @@ fetch(
         containerResult.innerHTML = `
         <div class="d-flex flex-column align-items-center mt-5">
         <h1>Pokémon Not Found</h1>
-        <img src="./img/pokemon-not-found.png" alt="" style="width: 200px; margin-top: 1rem">
+        <img src="./img/pokemon-not-found.png" class="not-found-img" alt="" style="width: 200px; margin-top: 1rem">
         </div>
         `;
       }
@@ -85,28 +83,32 @@ fetch(
       showElements(window.pokemonData.filterData(allPokemon, search));
     });
 
-    //Botón Ordenar por Nombre de A a Z
-    containerAZ.addEventListener("click", () => {
-      cardHTML = "";
-      showElements(window.pokemonData.sortData(allPokemon, "name", true));
-    });
-
-    //Botón Ordenar por Nombre de Z a A
-    containerZA.addEventListener("click", () => {
-      cardHTML = "";
-      showElements(window.pokemonData.sortData(allPokemon, "name", false));
-    });
-
-    //Botón Ordenar por Nombre de 1 a 151
-    container1To151.addEventListener("click", () => {
-      cardHTML = "";
-      showElements(window.pokemonData.sortData(allPokemon, "num", true));
-    });
-
-    //Botón Ordenar por Nombre de 151 a 1
-    container151To1.addEventListener("click", () => {
-      cardHTML = "";
-      showElements(window.pokemonData.sortData(allPokemon, "num", false));
+    //RADIO GROUP
+    formPokeSorter.forEach((i) => {
+      i.addEventListener("change", function () {
+        console.log(i.value);
+        const radio = Number(i.value);
+        switch (radio) {
+          case 1:
+            cardHTML = "";
+            showElements(window.pokemonData.sortData(allPokemon, "num", true));
+            break;
+          case 2:
+            cardHTML = "";
+            showElements(window.pokemonData.sortData(allPokemon, "num", false));
+            break;
+          case 3:
+            cardHTML = "";
+            showElements(window.pokemonData.sortData(allPokemon, "name", true));
+            break;
+          case 4:
+            cardHTML = "";
+            showElements(
+              window.pokemonData.sortData(allPokemon, "name", false)
+            );
+            break;
+        }
+      });
     });
 
     const showPrevEvolution = (pokemon) => {
@@ -145,7 +147,7 @@ fetch(
 
       document.getElementById("modal_title").innerHTML = `
       <h4 class="modal-title">${poke[0].name}</h4>
-      <h4 class="modal-title">#${poke[0].num}</h4>
+      <h4 class="modal-title">${poke[0].num}</h4>
       `;
       document.getElementById("poke_img").src = poke[0].img;
       document.getElementById("poke_type").innerHTML = `

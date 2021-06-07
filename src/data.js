@@ -1,32 +1,13 @@
 window.pokemonData = {
   filterData: (data, condition) => {
-    if (
-      [
-        "Water",
-        "Bug",
-        "Dragon",
-        "Electric",
-        "Ghost",
-        "Fire",
-        "Ice",
-        "Fighting",
-        "Normal",
-        "Grass",
-        "Psychic",
-        "Rock",
-        "Ground",
-        "Poison",
-        "Flying",
-      ].includes(condition)
-    ) {
-      return data.filter(
-        (a) => a.type[0] === condition || a.type[1] === condition
-      );
-    } else {
-      return data.filter(
-        (a) => a.name.includes(condition) || a.id === parseInt(condition)
-      );
-    }
+    console.log(condition);
+    return data.filter(
+      (a) =>
+        a.name.includes(condition) ||
+        a.id === parseInt(condition) ||
+        a.type[0].includes(condition) ||
+        a.type[1]?.includes(condition)
+    );
   },
   //Función Ordenar de A a Z
   sortData: (data, sortBy, sortedOrder) => {
