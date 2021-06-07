@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
-<html lang="en">
-  <head>
-    <!-- etiquetas requeridas meta -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -47,30 +37,59 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                ORDENAR
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" id="a_z">A-Z</a>
-                <a class="dropdown-item" href="#" id="z_a">Z-A</a>
-                <a class="dropdown-item" href="#" id="number1to151">1-151</a>
-                <a class="dropdown-item" href="#" id="number151to1">151-1</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <select class="form-control mr-sm-2" id="select_type">
+        <div class="collapse navbar-collapse mr-lg-4" id="navbarSupportedContent">
+          <!-- Radio Group -->
+          <div class="mr-lg-3 mt-3 mt-lg-0 col-lg-6 px-0 px-lg-2" mr-auto">
+            <form
+              name="formPokeSorter"
+              class="radio-sorter d-flex align-items-center pt-2 row mx-0 w-100"
+            >
+              <label class="radio-inline col-6 col-xl-3" style="min-width: 100px;">
+                <input
+                  type="radio"
+                  name="groupPokeSorter"
+                  class="mr-2"
+                  value="1"
+                  checked
+                />
+                001 - 151
+              </label>
+              <label class="radio-inline col-6 col-xl-3" style="min-width: 100px;">
+                <input
+                  type="radio"
+                  name="groupPokeSorter"
+                  class="mr-2"
+                  value="2"
+                />
+                151 - 001
+              </label>
+              <label class="radio-inline col-6 col-xl-3" style="min-width: 100px;">
+                <input
+                  type="radio"
+                  name="groupPokeSorter"
+                  class="mr-2"
+                  value="3"
+                />
+                A - Z
+              </label>
+              <label class="radio-inline col-6 col-xl-3" style="min-width: 100px;">
+                <input
+                  type="radio"
+                  name="groupPokeSorter"
+                  class="mr-2"
+                  value="4"
+                />
+                Z - A
+              </label>
+            </form>
+          </div>
+
+          <div class="mr-auto mr-lg-3 col-lg-3 px-0 px-lg-2">
+            <select
+              class="form-control mr-sm-2 mt-3 mt-lg-0"
+              style="height: 50px"
+              id="pokeTypeSelect"
+            >
               <option value="all">Tipos de Pokémon</option>
               <option value="Water">Agua</option>
               <option value="Bug">Bicho</option>
@@ -88,14 +107,27 @@
               <option value="Poison">Veneno</option>
               <option value="Flying">Volador</option>
             </select>
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              id="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-          </form>
+          </div>
+
+          <div class="my-3 my-lg-0 mr-lg-3 col-lg-3 px-0 px-lg-2">
+            <!-- Search -->
+            <div class="d-flex justify-content-end">
+              <input
+                class="form-control"
+                type="search"
+                id="search"
+                style="height: 50px"
+                placeholder="Ej.: Pikachu..."
+                aria-label="Search"
+              />
+              <img
+                id="iconSearch"
+                src="./img/magnifying-glass.png"
+                class="icon-search"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </nav>
     </header>
